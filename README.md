@@ -37,7 +37,7 @@ The token has three part(taking note of the dots) and they are all in Base64, bu
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9                          {"alg":"HS256","typ":"JWT"}
 eyJ1c2VybmFtZSI6Imd1ZXN0In0                                    {"username":"guest"}
 
-So what we are going to do now is that we are going to chane do some changes which will look like this:
+So what we are going to do now is that we are going to do some changes which will look like this:
 
 {"alg":"none","typ":"JWT"}
 {"username":"admin"}
@@ -56,8 +56,18 @@ Replace it with the original token in the using the devtools. Then you get your 
 "DoHCTF{jwt_has_a_none_algo_loll}"
 
 
+# OSINT
 
+# Rogue Agent 
+![Screenshot_2023-05-01_10_08_31](https://user-images.githubusercontent.com/51336409/235464165-06cb06cf-b1ab-4f88-b9de-50b1e73475c9.png)
+ 
+ For this challenge we were provided with a phone number "+2348109439442". We are asked to find someone on LinkedIn whose third name is "Mustapha".
+ After trying several Osint tools on the phone(i even tried using True caller) it did not yield anything. So i open my bank app and did as if i wanted to transfer some money to the phone number(Bank to PalmPay). Then i go the person's Which is "Adebayo Ekeh Mustapha". Then i went to LinkedIn to search for the name
 
+![Screenshot_2023-05-01_10_16_06](https://user-images.githubusercontent.com/51336409/235466416-27a0ce5e-f536-4109-b522-0d330d80f352.png)
+
+I got this Base64 from the profile "RG9IQ1RGe3RoYXRfd2FzX2Vhc3lfcmlnaHQ/X3JpZ2h0P30K" decoding it we got the flag "DoHCTF{that_was_easy_right?_right?}"
+ 
 
 
 
