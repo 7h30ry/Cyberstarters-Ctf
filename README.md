@@ -69,6 +69,11 @@ Replace it with the original token in the using the devtools. Then you get your 
 I got this Base64 from the profile "RG9IQ1RGe3RoYXRfd2FzX2Vhc3lfcmlnaHQ/X3JpZ2h0P30K" decoding it we got the flag "DoHCTF{that_was_easy_right?_right?}"
  
 
+# STEG
 
 
+# OK
+![Screenshot_2023-05-01_12_07_28](https://user-images.githubusercontent.com/51336409/235485034-a2191c64-f13c-4dfc-b7af-6f2576d4edd6.png)
+
+After downloading the file,i open it and notice it had some extra space in it. Search for what type of steg file it so i found out it is a snow steganography so i used this command to solve it "stegsnow -C 0cold_flag.txt" and i got the flag "DoHCTF{another_quite_simple_one}"
 
